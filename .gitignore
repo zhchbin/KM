@@ -2,6 +2,8 @@
 *.slo
 *.lo
 *.o
+*.exe
+*.out
 
 # Compiled Dynamic libraries
 *.so
