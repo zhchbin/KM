@@ -16,3 +16,6 @@ Live Tools是一组免费的在线设计应用程序，让你可以轻松地创�
 
 [Linux内存点滴，用户进程内存空间](http://www.perfgeeks.com/?p=770)
 写的是关于用户进程的内存分配问题，很详细的一片文章。看完后对进程的内存空间：代码段，数据段，堆，栈各个区域会有相应的认识。文章中还通过讲了一点点操作系统的关于内存的知识。`Label: Program`
+
+[Creating multi-threaded C++ code](http://codebase.eu/tutorial/posix-threads-c/)
+基本的Posix多线程编程，简明易懂。
