@@ -1,0 +1,9 @@
+{
+  "name": "MediaKeys",
+  "version": "${FBSTRING_PLUGIN_VERSION}",
+  "description": "Grab media keys.",
+
+	"plugins": [
+    { "path": "npMediaKeys.dll", "public": true }
+  ]
+}
