@@ -24,3 +24,5 @@ Live Tools是一组免费的在线设计应用程序，让你可以轻松地创�
 模拟对象，在面向对象编程中通常用于模拟真实对象，以可控的方式来对其他对象的行为进行测试。`C++`
 
 [Curry about C++](http://stackoverflow.com/questions/152005/how-can-currying-be-done-in-c) `C++`
+
+[什么是开源精神](https://github.com/lifesinger/lifesinger.github.com/issues/167)
