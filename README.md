@@ -26,3 +26,6 @@ Live Tools是一组免费的在线设计应用程序，让你可以轻松地创�
 [Curry about C++](http://stackoverflow.com/questions/152005/how-can-currying-be-done-in-c) `C++`
 
 [什么是开源精神](https://github.com/lifesinger/lifesinger.github.com/issues/167)
+
+[Why Does Angular.js Rock?](http://angular-tips.com/blog/2013/08/why-does-angular-dot-js-rock/) 
+Angular.js is a MV* (Model – View – Whatever) Javascript framework which is maintained by Google which excels in the creation of `single-page-applications` or even for adding some “magic” to our classic web applications.  `JS` 
