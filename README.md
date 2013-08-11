@@ -28,4 +28,7 @@ Live Tools是一组免费的在线设计应用程序，让你可以轻松地创�
 [什么是开源精神](https://github.com/lifesinger/lifesinger.github.com/issues/167)
 
 [Why Does Angular.js Rock?](http://angular-tips.com/blog/2013/08/why-does-angular-dot-js-rock/) 
-Angular.js is a MV* (Model – View – Whatever) Javascript framework which is maintained by Google which excels in the creation of `single-page-applications` or even for adding some “magic” to our classic web applications.  `JS` 
+Angular.js is a `MV*` (Model – View – Whatever) Javascript framework which is maintained by Google which excels in the creation of `single-page-applications` or even for adding some “magic” to our classic web applications.  `JS` 
+
+[我们需要专职的QA吗?] (http://coolshell.cn/articles/6994.html)
+即使想我基本没有多少实际经验的人都非常认同文章中讲的观点。chrome的大部分测试都是写代码的人干的。比如最近我在改一个从firefox导入书签的bug，我只改三行代码就叫去refactor和加上上百行测试代码。[Code Review Link](https://codereview.chromium.org/22408007)
