@@ -32,3 +32,5 @@ Angular.js is a `MV*` (Model – View – Whatever) Javascript framework which i
 
 [我们需要专职的QA吗?] (http://coolshell.cn/articles/6994.html)
 即使想我基本没有多少实际经验的人都非常认同文章中讲的观点。chrome的大部分测试都是写代码的人干的。比如最近我在改一个从firefox导入书签的bug，我只改三行代码就叫去refactor和加上上百行测试代码。[Code Review Link](https://codereview.chromium.org/22408007)
+
+[A Huge List of Free Books](http://programming-motherfucker.com/become.html)
