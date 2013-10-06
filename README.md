@@ -34,3 +34,6 @@ Angular.js is a `MV*` (Model – View – Whatever) Javascript framework which i
 即使想我基本没有多少实际经验的人都非常认同文章中讲的观点。chrome的大部分测试都是写代码的人干的。比如最近我在改一个从firefox导入书签的bug，我只改三行代码就叫去refactor和加上上百行测试代码。[Code Review Link](https://codereview.chromium.org/22408007)
 
 [A Huge List of Free Books](http://programming-motherfucker.com/become.html)
+
+[OPEN SOURCE MADE ME THE MAN I AM](http://cubiq.org/open-source-made-me-the-man-i-am)
+开源会使你成为一个更好的开发者，它会驱使你跟其他开发者作比较，这对于一个编程人员来说是最好的锻炼。在投入时间去参与Open Source Project的过程中，你会学到在比教程，书本更多的知识。
