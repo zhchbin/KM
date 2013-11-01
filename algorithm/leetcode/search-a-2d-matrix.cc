@@ -6,8 +6,9 @@
 //            2.The first integer of each row is greater than the last integer of
 //            the previous row.
 //
-// Solution: Binary search the martix, just take it like as an one dimension
-//           array.
+// Solution: Binary search the martix, just take it as one dimension array. The
+//           tricky part is how to mapping the one dimension index to the martix
+//           array index.
 //
 
 #include <vector>
