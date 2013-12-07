@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Quick Scroll to Labels Options</title>
+		<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+		<style type="text/css">
+			body {
+				background-image: url(images/background.png);
+			}
+
+			.logo {
+				margin: 10px;
+				width: 48px;
+			}
+
+			.boxwrapper {
+				background-color: white;
+				padding: 20px 4px 4px 10px;
+				width: 820px;
+				margin: auto;
+				border-radius: 5px;
+				-webkit-box-shadow: 2px 5px 12px #555;
+				margin-top: 40px;
+			}
+
+			#info {
+				width: 380px;
+				height: 300px;
+				border-left: 5px solid #EEE;
+				padding-left: 10px;
+			}
+
+			.faderlabel {
+				width: 50px;
+				border: 0px;
+				margin-right: 0px;
+				background: white;
+			}
+
+			/**** COLOR GRID ****/
+			#color-grid table {
+				border: 1px solid #e6e6e6;
+				border-collapse: collapse;
+				width: 225px;
+				height: 270px;
+			}
+
+			#color-grid tr {
+				border: 1px solid #e6e6e6;
+			}
+
+			#color-grid td {
+				cursor: pointer;
+				-webkit-transition: box-shadow 0.4s;
+			}
+
+			#color-grid td:hover {
+				box-shadow: 0px 3px 6px rgba(0,0,0,0.4);
+			}
+
+			#color-grid td.selected {
+				border: 1px solid #888;
+				box-shadow: 0px 3px 6px rgba(0,0,0,0.4);
+			}
+
+			#color-grid .grid-color, #color-grid td.disabled.selected .grid-color {
+				box-shadow: 0px 2px 4px #808080;
+				height: 30px;
+				width: 30px;
+			}
+
+			#color-grid td.disabled .grid-color {
+				box-shadow: none;
+			}
+
+			/* BOX MODEL*/
+			/* For generic elements */
+			.box {
+				display: -webkit-box;
+			}
+			.box-v {
+				-webkit-box-orient: vertical;
+			}
+			.box-ac {
+				-webkit-box-align: center;
+			}
+			.box-pc {
+				-webkit-box-pack: center;
+			}
+			.box-pe {
+				-webkit-box-pack: end;
+			}
+			.box-c-c {
+				-webkit-box-align: center;
+				-webkit-box-pack: center;
+			}
+			.box-flex {
+				-webkit-box-flex: 1;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="navbar-inner" style="border-top: 3px solid #08C;">
+			<div class="container">
+				<legend style="margin-bottom: 0px">
+					<img src="images/icon128x128.png" class="img-rounded logo" />
+					Options for the Quick Scroll to Labels
+				</legend>
+			</div>
+		</div>	
+		
+		<div class="container">
+			<div class="boxwrapper">
+				<table class="table">
+					<tr>
+						<td style="text-align: right">Bottom: </td>
+						<td>
+						<input class="range" type="range" min="0" step="1" data-role="bottom"/>
+						</td>
+						<td>
+						<blockquote>
+							<div id="bottomLabel"> </div>
+						</blockquote></td>
+						<td rowspan="7">
+							<div id="info">
+								 <legend>About Quick Scroll to Label</legend>
+								 <label>This simple extension(open source in the <a target="_blank" href="https://github.com/zhchbin/QuickScrollToLabel">github</a>) is powered by coffee and free totally.
+								 	The UI design of the box comes from the <a href="https://chrome.google.com/webstore/detail/okanipcmceoeemlbjnmnbdibhgpbllgc" target="_blank">Google Quick Scroll</a>. However, its feature is totally different.</label>
+								 <label>Thanks my family.</label>
+								 <div class="form-actions">
+								 	<label>Contact me: <a href="mailto:zhchbin@gmail.com" target="_blank">zhchbin#gmail.com</a></label>
+								 	<label>Copyright © zhchbin, All Rights Reserved.</label>
+								 </div>
+								 
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td style="text-align: right">Right: </td>
+						<td>
+						<input class="range" type="range" min="0" step="1" data-role="right">
+						</td>
+						<td width="60px">
+						<blockquote>
+							<div id="rightLabel"> </div>
+						</blockquote></td>
+					</tr>
+					
+					<tr>
+						<td style="text-align: right">Width: </td>
+						<td>
+						<input class="range" type="range" min="100" max="500" step="1" data-role="width">
+						</td>
+						<td>
+						<blockquote>
+							<div id="widthLabel"> </div>
+						</blockquote></td>
+					</tr>
+					
+					<tr>
+						<td style="text-align: right">Speed: </td>
+						<td>
+						<input class="range" type="range" min="2" max="10" step="1" data-role="speed">
+						</td>
+						<td>
+						<blockquote>
+							<div id="speedLabel"> </div>
+						</blockquote></td>
+					</tr>
+					
+					<tr>
+						<td style="text-align: right">Opacity: </td>
+						<td>
+						<input class="range" type="range" min="0" max="1" step="0.1" data-role="opacity">
+						</td>
+						<td>
+						<blockquote>
+							<div id="opacityLabel"> </div>
+						</blockquote></td>
+					</tr>
+
+					<tr>
+						<td style="text-align: right">Bg Color: </td>
+						<td>
+							<input class="color" id="bgColor" type="text" data-role="bgColor"/>
+						</td>
+						<td>
+							<blockquote>
+							<div id="bgColorLabel" class="grid-color box box-c-c"> &nbsp; </div>
+							</blockquote>
+						</td>
+					</tr>
+					
+					<tr>
+						<td style="text-align: right">Font Color: </td>
+						<td>
+						<input class="color" id="fontColor" type="text" data-role="fontColor"/>
+						</td>
+						<td>
+						<blockquote>
+							<div id="fontColorLabel" class="grid-color box box-c-c">&nbsp;</div>
+						</blockquote></td>
+					</tr>
+					
+					<tr>
+						<td colspan="3">
+						<button id="saveBtn" class="btn btn-primary" style="margin-left: 180px" disabled="disabled" title="Done" data-trigger="manual">Save</button>
+						<button id="defaultBtn" class="btn" title="Save also">Default</button></td>
+					</tr>
+				</table>
+				<div class="alert alert-success hide">
+					<strong>Wow!</strong>
+					Your setting have been saved.
+				</div>
+			</div>
+		</div>
+
+			
+		<div class="container" style="margin-bottom: 100px">
+			<div class="boxwrapper">
+				<div id="screensnapCarousel" class="carousel slide">
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="images/screenshot_1.png" alt="">
+							<div class="carousel-caption">
+								<h4>First Step</h4>
+								<p>
+									Select what you want to label, and then right click. In the context menu, click the "Add Label" menu. Another way, select and click the extension icon in your bar.  
+								</p>
+							</div>
+						</div>
+						<div class="item">
+							<img src="images/screenshot_2.png" alt="">
+							<div class="carousel-caption">
+								<h4>Second</h4>
+								<p>
+									Now you can continue to read the page, once you want to go back the labeled area, just move your cursor to the little box, and click the label.
+								</p>
+							</div>
+						</div>
+						<div class="item">
+							<img src="images/screenshot_3.png" alt="">
+							<div class="carousel-caption">
+								<h4>Third</h4>
+								<p>
+									Wow! You can quickly scroll to the area label now... Simple usage, enjoy it. Thanks for your use!!
+								</p>
+							</div>
+						</div>
+					</div>
+					<a class="left carousel-control" href="#screensnapCarousel" data-slide="prev">‹</a>
+					<a class="right carousel-control" href="#screensnapCarousel" data-slide="next">›</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal hide fade" id="colorPicker">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h3>Pick a Color</h3>
+				
+			</div>
+			<div class="modal-body" width="225px">
+				<p>Double click to select a color</p>
+				<div id="color-grid" class="box box-c-c flex" style="-webkit-user-select: none">
+					<table border="1">
+						<tr>
+							<td align="center" data-color="rgb(255,255,255)"><div class="grid-color box box-c-c" style="background-color: rgb(255, 255, 255); "></div></td><td align="center" data-color="rgb(204,204,204)"><div class="grid-color box box-c-c" style="background-color: rgb(204, 204, 204); "></div></td><td align="center" data-color="rgb(153,153,153)"><div class="grid-color box box-c-c" style="background-color: rgb(153, 153, 153); "></div></td><td align="center" data-color="rgb(102,102,102)"><div class="grid-color box box-c-c" style="background-color: rgb(102, 102, 102); "></div></td><td align="center" data-color="rgb(0,0,0)"><div class="grid-color box box-c-c" style="background-color: rgb(0, 0, 0); "></div></td>
+						</tr>
+						<tr>
+							<td align="center" data-color="rgb(215,224,232)"><div class="grid-color box box-c-c" style="background-color: rgb(215, 224, 232); "></div></td><td align="center" data-color="rgb(193,222,251)"><div class="grid-color box box-c-c" style="background-color: rgb(193, 222, 251); "></div></td><td align="center" data-color="rgb(139,184,230)"><div class="grid-color box box-c-c" style="background-color: rgb(139, 184, 230); "></div></td><td align="center" data-color="rgb(56,98,140)"><div class="grid-color box box-c-c" style="background-color: rgb(56, 98, 140); "></div></td><td align="center" data-color="rgb(9,55,96)"><div class="grid-color box box-c-c" style="background-color: rgb(9, 55, 96); "></div></td>
+						</tr>
+						<tr>
+							<td align="center" data-color="rgb(227,240,211)"><div class="grid-color box box-c-c" style="background-color: rgb(227, 240, 211); "></div></td><td align="center" data-color="rgb(178,216,144)"><div class="grid-color box box-c-c" style="background-color: rgb(178, 216, 144); "></div></td><td align="center" data-color="rgb(134,179,94)"><div class="grid-color box box-c-c" style="background-color: rgb(134, 179, 94); "></div></td><td align="center" data-color="rgb(78,104,44)"><div class="grid-color box box-c-c" style="background-color: rgb(78, 104, 44); "></div></td><td align="center" data-color="rgb(48,62,26)"><div class="grid-color box box-c-c" style="background-color: rgb(48, 62, 26); "></div></td>
+						</tr>
+						<tr>
+							<td align="center" data-color="rgb(222,218,175)"><div class="grid-color box box-c-c" style="background-color: rgb(222, 218, 175); "></div></td><td align="center" data-color="rgb(212,204,143)"><div class="grid-color box box-c-c" style="background-color: rgb(212, 204, 143); "></div></td><td align="center" data-color="rgb(178,171,110)"><div class="grid-color box box-c-c" style="background-color: rgb(178, 171, 110); "></div></td><td align="center" data-color="rgb(139,133,75)"><div class="grid-color box box-c-c" style="background-color: rgb(139, 133, 75); "></div></td><td align="center" data-color="rgb(95,89,35)"><div class="grid-color box box-c-c" style="background-color: rgb(95, 89, 35); "></div></td>
+						</tr>
+						<tr>
+							<td align="center" data-color="rgb(247,240,216)"><div class="grid-color box box-c-c" style="background-color: rgb(247, 240, 216); "></div></td><td align="center" data-color="rgb(237,204,158)"><div class="grid-color box box-c-c" style="background-color: rgb(237, 204, 158); "></div></td><td align="center" data-color="rgb(203,163,107)"><div class="grid-color box box-c-c" style="background-color: rgb(203, 163, 107); "></div></td><td align="center" data-color="rgb(151,105,41)"><div class="grid-color box box-c-c" style="background-color: rgb(151, 105, 41); "></div></td><td align="center" data-color="rgb(97,63,16)"><div class="grid-color box box-c-c" style="background-color: rgb(97, 63, 16); "></div></td>
+						</tr>
+						<tr>
+							<td align="center" data-color="rgb(255,206,191)"><div class="grid-color box box-c-c" style="background-color: rgb(255, 206, 191); "></div></td><td align="center" data-color="rgb(255,149,119)"><div class="grid-color box box-c-c" style="background-color: rgb(255, 149, 119); "></div></td><td align="center" data-color="rgb(238,91,55)"><div class="grid-color box box-c-c" style="background-color: rgb(238, 91, 55); "></div></td><td align="center" data-color="rgb(180,63,35)"><div class="grid-color box box-c-c" style="background-color: rgb(180, 63, 35); "></div></td><td align="center" data-color="rgb(118,32,28)"><div class="grid-color box box-c-c" style="background-color: rgb(118, 32, 28); "></div></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="lib/jquery.min.js"></script>
+		<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="options.js"></script>
+	</body>
+</html>

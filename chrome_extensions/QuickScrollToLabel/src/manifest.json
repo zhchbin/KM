@@ -1,0 +1,36 @@
+{
+	"name": "Quick Scroll To Label",
+	"version": "0.1.2",
+	"manifest_version": 2,
+	"description": "Add label in your web page, and you can quicklly scroll to it when you need.",
+	"background": {
+		"scripts": ["bg.js"]
+	},
+	"browser_action": {
+		"default_icon": "images/icon128x128.png"
+	},
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"css" : ["style.css"],
+			"js": ["lib/jquery.min.js", "content.js"]
+		}
+	],
+	"permissions": ["tabs", "contextMenus"],
+	
+	"web_accessible_resources": [
+		"images/icon.png",
+		"images/minimize.png",
+		"images/minimize_on.png",
+		"images/help.png",
+		"images/help_on.png",
+		"images/icon16x16.png"	
+	],
+	"icons": {
+		"16": "images/icon16x16.png",
+		"48": "images/icon48x48.png",
+		"128": "images/icon128x128.png"
+	},
+	 "options_page": "options.html",
+	 "update_url": "https://raw.github.com/zhchbin/QuickScrollToLabel/master/release/updates.xml"
+}
