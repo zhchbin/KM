@@ -37,3 +37,6 @@ Angular.js is a `MV*` (Model – View – Whatever) Javascript framework which i
 
 [OPEN SOURCE MADE ME THE MAN I AM](http://cubiq.org/open-source-made-me-the-man-i-am)
 开源会使你成为一个更好的开发者，它会驱使你跟其他开发者作比较，这对于一个编程人员来说是最好的锻炼。在投入时间去参与Open Source Project的过程中，你会学到在比教程，书本更多的知识。
+
+[NodeJS 优缺点及适用场景讨论](http://www.cnblogs.com/sysuys/p/3460614.html)
+例子举得通俗易懂啊！`node.js`
