@@ -1,7 +1,6 @@
 // URL: http://oj.leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
 
 #include <iostream>
-#include <set>
 using namespace std;
 
 struct TreeLinkNode {
@@ -11,57 +10,47 @@ struct TreeLinkNode {
 };
 
 // You can also used BFS, but there is a "queue".
-class WrongSolution {
+class RecursiveSolution {
 public:
-  void connect(TreeLinkNode *root) {
-    has_visited.clear();
+  void connect(TreeLinkNode* root) {
     if (!root)
       return;
 
-    root->next = NULL;
-    preorder(root);
-  }
-
-  void preorder(TreeLinkNode* root) {
-    if (!root || has_visited.count(root))
-      return;
-
-    if (root->next)
-      preorder(root->next);
-
-    has_visited.insert(root);
-    TreeLinkNode** t = NULL;
+    TreeLinkNode* t = NULL;
     if (root->left && root->right) {
       root->left->next = root->right;
-      t = &(root->right);
+      t = root->right;
     } else if (root->left) {
-      t = &(root->left);
+      t = root->left;
     } else if (root->right) {
-      t = &(root->right);
+      t = root->right;
     }
 
-    TreeLinkNode* p = root->next;
-    TreeLinkNode* next = NULL;
-    while (p) {
-      if (p->left) {
-        next = p->left;
-        break;
-      } else if (p->right) {
-        next = p->right;
-        break;
+    TreeLinkNode* temp = root->next;
+    if (t) {
+      TreeLinkNode* next = NULL;
+      while (temp) {
+        if (temp->left) {
+          next = temp->left;
+          break;
+        } else if (temp->right) {
+          next = temp->right;
+          break;
+        }
+
+        temp = temp->next;
       }
-      p = p->next;
+      t->next = next;
     }
 
-    if (t)
-      (*t)->next = next;
-
-    preorder(root->left);
-    preorder(root->right);
+    // Note the sequence, right -> left, due to case like:
+    //      1
+    //    2   3
+    //   4 5 6 7
+    //  8       15
+    connect(root->right);
+    connect(root->left);
   }
-
-  // It viloates "You may only use constant extra space.", sigh...
-  set<TreeLinkNode*> has_visited;
 };
 
 class Solution {
