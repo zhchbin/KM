@@ -55,6 +55,38 @@ class Solution {
   }
 };
 
+// Do no need to allocate the int array.
+class BetterSolution {
+ public:
+  TreeNode *buildTree(vector<int> &preorder, vector<int> &inorder) {
+    assert(preorder.size() == inorder.size());
+    return buildTreeImpl(preorder, 0, preorder.size() - 1,
+                         inorder, 0, inorder.size() - 1);
+  }
+
+  TreeNode* buildTreeImpl(vector<int>& preorder, int pb, int pe,
+                          vector<int>& inorder, int ib, int ie) {
+    if (pb > pe || ib > ie)
+      return NULL;
+
+    int value = preorder[pb];
+    TreeNode* node = new TreeNode(value);
+    int i;
+    for (i = ib; i <= ie; ++i) {
+      if (inorder[i] == value)
+        break;
+    }
+    assert(i <= ie);
+
+    node->left = buildTreeImpl(preorder, pb + 1, pb + (i - ib),
+                               inorder, ib, i - 1);
+    node->right = buildTreeImpl(preorder, pb + (i - ib) + 1, pe,
+                                inorder, i + 1, ie);
+
+    return node;
+  }
+};
+
 void in(TreeNode* root) {
   if (root == NULL)
     return;
