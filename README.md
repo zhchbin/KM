@@ -40,3 +40,6 @@ Angular.js is a `MV*` (Model – View – Whatever) Javascript framework which i
 
 [NodeJS 优缺点及适用场景讨论](http://www.cnblogs.com/sysuys/p/3460614.html)
 例子举得通俗易懂啊！`node.js`
+
+[The Magic of Strace](http://chadfowler.com/blog/2014/01/26/the-magic-of-strace/)
+Amazingly rich tool!
