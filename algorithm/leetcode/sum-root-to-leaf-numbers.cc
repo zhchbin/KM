@@ -65,6 +65,34 @@ class Solution {
   int sum;
 };
 
+class Solution2 {
+ public:
+  int sumNumbers(TreeNode* root) {
+    sum = 0;
+    dfs(root, 0);
+
+    return sum;
+  }
+
+  void dfs(TreeNode* root, int num) {
+    if (root == NULL)
+      return;
+
+    num *= 10;
+    num += root->val;
+    if (root->left == NULL && root->right == NULL) {
+      sum += num;
+      return;
+    }
+
+    dfs(root->left, num);
+    dfs(root->right, num);
+  }
+
+ private:
+  int sum;
+};
+
 int main(int argc, char *argv[]) {
   TreeNode ll(5);
   TreeNode lr(4);
