@@ -2,6 +2,7 @@
 #define  COMMON_H_
 
 #include <cmath>
+#include <cassert>
 
 #include <algorithm>
 #include <iostream>
