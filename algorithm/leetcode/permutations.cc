@@ -59,10 +59,33 @@ class Answer {
   }
 };
 
+class AnotherSolution {
+ public:
+  vector<vector<int> > permute(vector<int>& num) {
+    vector<vector<int> > result;
+    permuteRecursive(0, result, num);
+
+    return result;
+  }
+
+  void permuteRecursive(int k, vector<vector<int> >& result, vector<int>& num) {
+    if (k == num.size()) {
+      result.push_back(num);
+      return;
+    }
+
+    for (int i = k; i < num.size(); ++i) {
+      std::swap(num[k], num[i]);
+      permuteRecursive(k + 1, result, num);
+      std::swap(num[k], num[i]);
+    }
+  }
+};
+
 int main(int argc, char *argv[]) {
   int data[] = {1, 2, 3};
   vector<int> num(data, data + 3);
-  vector<vector<int> > permutations = Solution().permute(num);
+  vector<vector<int> > permutations = AnotherSolution().permute(num);
   for (int i = 0; i < permutations.size(); ++i) {
     for (int j = 0; j < permutations[i].size(); ++j)
       cout << permutations[i][j] << " ";
