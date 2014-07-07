@@ -43,6 +43,42 @@ class Solution {
   }
 };
 
+
+class HeapSolution {
+ public:
+  class Cmp {
+   public:
+    bool operator()(const ListNode* lhs, const ListNode* rhs) const {
+      return lhs->val > rhs->val;
+    }
+  };
+
+  ListNode *mergeKLists(vector<ListNode *> &lists) {
+    if (lists.empty())
+      return NULL;
+    std::priority_queue<ListNode*, std::vector<ListNode*>, Cmp> q;
+
+    for (int i = 0; i < lists.size(); ++i) {
+      if (lists[i])
+        q.push(lists[i]);
+    }
+    ListNode dummy(0);
+    ListNode* cur = &dummy;
+
+    while (!q.empty()) {
+      ListNode* t = q.top();
+      q.pop();
+      cur->next = t;
+      cur = cur->next;
+
+      if (t->next)
+        q.push(t->next);
+    }
+
+    return dummy.next;
+  }
+};
+
 int main(int argc, char *argv[]) {
   ListNode l1[] = {1, 2, 5, 8};
   ListNode l2[] = {3, 7, 9, 10};
@@ -56,7 +92,7 @@ int main(int argc, char *argv[]) {
   lists.push_back(&l1[0]);
   lists.push_back(&l2[0]);
   lists.push_back(&l3[0]);
-  Solution s;
+  HeapSolution s;
   ListNode* head = s.mergeKLists(lists);
   while (head) {
     cout << head->val << endl;
